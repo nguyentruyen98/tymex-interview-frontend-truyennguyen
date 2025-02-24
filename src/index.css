@@ -1,4 +1,14 @@
+@font-face {
+  font-family: "Drone Ranger Pro";
+  font-style: normal;
+  font-weight: bold;
+  src: url("./assets/fonts/dronerangerpro_bold.otf");
+}
+
 @import "tailwindcss";
+@theme {
+  --font-drone: "Drone Ranger Pro", "sans-serif";
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
