@@ -24,7 +24,7 @@ const CardItem = memo(
   }: CardItemProps) => {
     return (
       <CardContainer className="inter-var inline-flex cursor-pointer">
-        <CardBody className="group/card relative h-auto w-auto cursor-pointer rounded-[10px] bg-[#3A3841]/60 p-4">
+        <CardBody className="group/card bg-shadow-violet/60 relative h-auto w-auto cursor-pointer rounded-[10px] p-4">
           <div>
             <CardItem3D translateZ={60} className="mt-4 w-full">
               <div className="rounded-sm bg-gradient-to-r from-[#DD5AFE] to-[#6366F1]">

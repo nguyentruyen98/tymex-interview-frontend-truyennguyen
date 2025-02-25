@@ -9,6 +9,7 @@ export const textVariants = cva("relative", {
       caption: "text-xs leading-5 font-medium",
       body: "text-sm leading-5 font-medium",
       "title-lg": "font-drone text-base leading-7 font-bold lg:text-lg",
+      "title-xl": "font-drone text-xl leading-8 font-bold",
       "title-sm": "font-drone text-sm leading-5 font-bold",
       "title-7xl": "font-drone text-7xl leading-[88px font-bold",
     },

@@ -12,6 +12,7 @@
   --breakpoint-lg: 64.1rem;
   --color-primary-gradient: linear-gradient(to right, #da458f, #da34dd);
   --color-shadow-gray: #89888b;
+  --color-shadow-violet: #3a3841;
   --color-light-gray: #d6d6d6;
   --color-secondary: #17161a;
 }
