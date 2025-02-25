@@ -6,10 +6,18 @@ import { cn } from "@/lib/utils";
 import { TextProps, textVariants } from "./Text.type";
 
 const Text = memo(
-  ({ children, className, variant, asChild = false, tag = "p" }: TextProps) => {
+  ({
+    children,
+    className,
+    variant,
+    color,
+    cursor,
+    asChild = false,
+    tag = "p",
+  }: TextProps) => {
     const Comp = asChild ? Slot : tag;
     return (
-      <Comp className={cn(textVariants({ variant, className }))}>
+      <Comp className={cn(textVariants({ variant, color, cursor, className }))}>
         {children}
       </Comp>
     );
