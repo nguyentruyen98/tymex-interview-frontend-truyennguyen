@@ -9,6 +9,9 @@
 @theme {
   --font-drone: "Drone Ranger Pro", "sans-serif";
   --color-primary-gradient: linear-gradient(to right, #da458f, #da34dd);
+  --color-shadow-gray: #89888b;
+  --color-light-gray: #d6d6d6;
+  --color-secondary: #17161a;
 }
 .ant-tooltip-inner {
   background-image: linear-gradient(to right, #da458f, #da34dd) !important;

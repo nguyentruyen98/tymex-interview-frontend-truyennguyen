@@ -14,8 +14,9 @@ export const textVariants = cva("relative", {
     },
     color: {
       primary: "text-white",
-      secondary: "text-[#17161A]",
-      "light-gray": "text-[#D6D6D6]",
+      secondary: "text-secondary",
+      "shadow-gray": "text-shadow-gray",
+      "light-gray": "text-light-gray",
       gradient:
         "bg-linear-to-r from-[#DA458F] to-[#DA34DD] bg-clip-text text-transparent after:absolute after:bottom-0 after:left-1 after:block after:h-0.5 after:w-4 after:bg-linear-to-r after:from-[#DA458F] after:to-[#DA34DD] after:content-['']",
     },
