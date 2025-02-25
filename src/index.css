@@ -8,8 +8,16 @@
 @import "tailwindcss";
 @theme {
   --font-drone: "Drone Ranger Pro", "sans-serif";
+  --color-primary-gradient: linear-gradient(to right, #da458f, #da34dd);
 }
-
+.ant-tooltip-inner {
+  background-image: linear-gradient(to right, #da458f, #da34dd) !important;
+  font-weight: 600;
+  font-size: 16px;
+}
+.ant-tooltip-arrow::before {
+  background-image: linear-gradient(to right, #da458f, #da34dd) !important;
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -35,9 +43,6 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 
