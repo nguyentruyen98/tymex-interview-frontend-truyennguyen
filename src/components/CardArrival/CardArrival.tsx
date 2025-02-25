@@ -1,10 +1,12 @@
+import { memo } from "react";
+
 import backGround from "@/assets/images/card_arrival_bg.png";
 import Text from "@/components/Text/Text";
 import { CardContainer, CardItem } from "@/components/ui/3d-card";
 
 import { CardArrivalProps } from "./CardArrival.type";
 
-const CardArrival = ({ name, avatar }: CardArrivalProps) => {
+const CardArrival = memo(({ name, avatar }: CardArrivalProps) => {
   return (
     <CardContainer className="inline-flex cursor-pointer flex-col items-center">
       <CardItem translateZ="50" className="relative">
@@ -25,6 +27,6 @@ const CardArrival = ({ name, avatar }: CardArrivalProps) => {
       </CardItem>
     </CardContainer>
   );
-};
+});
 
 export default CardArrival;
