@@ -1,8 +1,12 @@
+import { IAuthor } from "@/apis/type";
 export type CardItemProps = {
   category?: string;
   avatar?: string;
-  name?: string;
+  title?: string;
   price?: number;
-  creator?: string;
+  imageId: number;
+  author: IAuthor;
   creatorAvatar?: string;
+  isFavorite?: boolean;
+  theme: "Dark" | "Light" | "Colorful" | "Halloween";
 };

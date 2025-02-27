@@ -1,27 +1,49 @@
-import { memo } from "react";
+import { memo, useMemo } from "react";
 
 import ETH from "@/assets/icons/eth.svg";
 import Heart from "@/assets/icons/heart.svg";
-import RoundedVerified from "@/assets/icons/rounded-verified.svg";
-import exampleCardArrivalAvatar from "@/assets/images/example_card_arrival_avatar.png";
-import exampleCardCreatorAvatar from "@/assets/images/example_card_creator_avatar.jpg";
+import RoundedVerifiedOffline from "@/assets/icons/rounded-verified-offline.svg";
+import RoundedVerifiedOnline from "@/assets/icons/rounded-verified-online.svg";
+import Image1 from "@/assets/images/image1.png";
+import Image2 from "@/assets/images/image2.png";
+import Image3 from "@/assets/images/image3.png";
+import Image4 from "@/assets/images/image4.png";
+import Text from "@/components/Text/Text";
 import {
   CardBody,
   CardContainer,
   CardItem as CardItem3D,
 } from "@/components/ui/3d-card";
+import { cn } from "@/lib/utils";
 
+import { CARD_THEME_COLOR } from "./CardItem.constants";
 import { CardItemProps } from "./CardItem.type";
 
 const CardItem = memo(
   ({
-    avatar = exampleCardArrivalAvatar,
-    creatorAvatar = exampleCardCreatorAvatar,
     price = 0,
+    isFavorite = false,
     category,
-    name,
-    creator,
+    title,
+    author,
+    theme,
+    imageId,
   }: CardItemProps) => {
+    const { avatar: authorAvatar, firstName, lastName, onlineStatus } = author;
+
+    const authorStatusIcon = useMemo(() => {
+      if (onlineStatus === "online") return <RoundedVerifiedOnline />;
+      return <RoundedVerifiedOffline />;
+    }, [onlineStatus]);
+
+    const cartAvatar = useMemo(() => {
+      console.log(imageId);
+      if (imageId <= 5) return Image1;
+      if (imageId <= 10) return Image2;
+      if (imageId <= 15) return Image3;
+      return Image4;
+    }, [imageId]);
+
     return (
       <CardContainer
         containerClassName="shrink-0"
@@ -30,16 +52,21 @@ const CardItem = memo(
         <CardBody className="group/card bg-shadow-violet/60 relative h-auto w-auto cursor-pointer rounded-[10px] p-4">
           <div>
             <CardItem3D translateZ={60} className="mt-4 w-full">
-              <div className="rounded-sm bg-gradient-to-r from-[#DD5AFE] to-[#6366F1]">
+              <div
+                className={cn(
+                  "rounded-sm bg-gradient-to-r",
+                  CARD_THEME_COLOR[theme],
+                )}
+              >
                 <div className="flex flex-row items-center justify-between p-2 pb-0">
                   <span className="rounded-sm bg-[#3A3841]/60 px-3 py-1 text-xs leading-5 font-medium text-white">
                     {category}
                   </span>
-                  <Heart />
+                  {isFavorite && <Heart />}
                 </div>
                 <img
                   className="h-[197px] w-[235px] object-cover object-top"
-                  src={avatar}
+                  src={cartAvatar}
                   alt="Avatar"
                 />
               </div>
@@ -47,25 +74,25 @@ const CardItem = memo(
           </div>
           <CardItem3D translateZ="50" className="w-full">
             <div className="mt-6 flex flex-row items-center justify-between text-white">
-              <p className="text-base leading-6 font-semibold">{name}</p>
+              <Text variant="header">{title}</Text>
               <div className="flex items-center gap-2">
                 <ETH />
-                <p className="text-sm leading-5 font-medium">{`${price} ETH`}</p>
+                <Text>{`${price} ETH`}</Text>
               </div>
             </div>
             <div className="mt-4 flex items-center gap-3">
               <div className="relative inline-block">
                 <img
                   className="h-8 w-8 rounded-full"
-                  src={creatorAvatar}
-                  alt="Avatar"
+                  src={authorAvatar}
+                  alt="Author Avatar"
                 />
                 <div className="absolute right-0 bottom-0">
-                  <RoundedVerified />
+                  {authorStatusIcon}
                 </div>
               </div>
               <p className="text-xs leading-5 font-medium text-white">
-                {creator}
+                {`${firstName} ${lastName}`}
               </p>
             </div>
           </CardItem3D>
