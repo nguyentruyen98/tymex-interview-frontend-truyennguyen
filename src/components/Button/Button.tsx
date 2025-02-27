@@ -3,9 +3,12 @@ import { cn } from "@/lib/utils";
 
 import { ButtonProps, buttonVariants } from "./Button.type";
 
-const Button = ({ children, className, variant }: ButtonProps) => {
+const Button = ({ children, className, variant, onClick }: ButtonProps) => {
   return (
-    <button className={cn(buttonVariants({ variant, className }))}>
+    <button
+      className={cn(buttonVariants({ variant, className }))}
+      onClick={onClick}
+    >
       <Text variant="header">{children}</Text>
     </button>
   );

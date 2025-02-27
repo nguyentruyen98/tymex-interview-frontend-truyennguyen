@@ -23,4 +23,8 @@ export const buttonVariants = cva(
 
 export type ButtonProps = PropsWithChildren<
   VariantProps<typeof buttonVariants>
-> & { className?: string };
+> &
+  React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >;

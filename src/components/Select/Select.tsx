@@ -16,6 +16,7 @@ const Select = ({
   options = [],
   onValueChange,
   defaultValue,
+  value,
 }: SelectProps) => {
   return (
     <div className="flex flex-col gap-3">
@@ -24,7 +25,11 @@ const Select = ({
           {label}
         </Text>
       )}
-      <ShadcnSelect onValueChange={onValueChange} defaultValue={defaultValue}>
+      <ShadcnSelect
+        onValueChange={onValueChange}
+        defaultValue={defaultValue}
+        value={value}
+      >
         <ShadcnSelectTrigger>
           <ShadcnSelectValue placeholder={placeholder} />
         </ShadcnSelectTrigger>

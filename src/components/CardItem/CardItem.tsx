@@ -14,6 +14,7 @@ import {
   CardContainer,
   CardItem as CardItem3D,
 } from "@/components/ui/3d-card";
+import { withFadeIn } from "@/hoc/withFadeIn";
 import { cn } from "@/lib/utils";
 
 import { CARD_THEME_COLOR } from "./CardItem.constants";
@@ -37,7 +38,6 @@ const CardItem = memo(
     }, [onlineStatus]);
 
     const cartAvatar = useMemo(() => {
-      console.log(imageId);
       if (imageId <= 5) return Image1;
       if (imageId <= 10) return Image2;
       if (imageId <= 15) return Image3;
@@ -74,7 +74,9 @@ const CardItem = memo(
           </div>
           <CardItem3D translateZ="50" className="w-full">
             <div className="mt-6 flex flex-row items-center justify-between text-white">
-              <Text variant="header">{title}</Text>
+              <Text variant="header" className="w-32 truncate">
+                {title}
+              </Text>
               <div className="flex items-center gap-2">
                 <ETH />
                 <Text>{`${price} ETH`}</Text>
@@ -102,4 +104,6 @@ const CardItem = memo(
   },
 );
 
-export default CardItem;
+const CardItemWithAnimation = withFadeIn<CardItemProps>(CardItem);
+
+export default CardItemWithAnimation;

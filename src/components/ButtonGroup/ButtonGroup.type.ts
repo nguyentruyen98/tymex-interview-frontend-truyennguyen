@@ -7,4 +7,5 @@ export type ButtonGroupProps = {
     icon?: any;
   }[];
   className?: string;
+  onGroupClick?: (value: string) => void;
 };

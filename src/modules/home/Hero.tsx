@@ -2,10 +2,9 @@ import bg from "@/assets/bg.jpeg";
 import Background from "@/assets/icons/bg.svg";
 import NewArrival from "@/assets/icons/new.svg";
 import TextBackground from "@/assets/icons/text-bg.svg";
+import image6 from "@/assets/image6.png";
 import CardArrival from "@/components/CardArrival/CardArrival";
 import Text from "@/components/Text/Text";
-
-import image6 from "../assets/image6.png";
 
 const Hero = () => {
   return (
