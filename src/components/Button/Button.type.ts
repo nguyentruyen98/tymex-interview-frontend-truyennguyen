@@ -6,12 +6,17 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary:
-          "bg-linear-to-r from-[#DA458F] to-[#DA34DD] shadow-[0px_0px_50px_0_#BB4BFF52]",
+        primary: "bg-linear-to-r from-[#DA458F] to-[#DA34DD]",
+        secondary: "bg-gradient-to-r from-[#DA458F]/40 to-[#DA34DD]/40",
+      },
+      shadow: {
+        default: "shadow-[0px_0px_50px_0_#BB4BFF52]",
+        none: "",
       },
     },
     defaultVariants: {
       variant: "primary",
+      shadow: "default",
     },
   },
 );

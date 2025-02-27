@@ -20,7 +20,6 @@ const Slider = ({
       <AntdSlider
         className="!m-0 !p-0"
         tooltip={{
-          open: true,
           formatter: value => `${value} ETH`,
         }}
         classNames={{

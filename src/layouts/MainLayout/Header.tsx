@@ -7,7 +7,7 @@ import MobileNav from "./MobileNav";
 
 const Header = () => {
   return (
-    <div className="bg-secondary/70 min:py-6 sticky top-0 z-10 w-full px-6 py-4 sm:px-8 sm:py-5 lg:pl-11 xl:pr-40 xl:pl-72">
+    <div className="bg-secondary/70 min:py-6 sticky top-0 z-100 w-full px-6 py-4 sm:px-8 sm:py-5 lg:pl-11 xl:pr-40 xl:pl-72">
       <div className="grad bg-image flex items-center justify-between">
         <MobileNav />
         <MainNav />

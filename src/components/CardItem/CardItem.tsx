@@ -23,7 +23,10 @@ const CardItem = memo(
     creator,
   }: CardItemProps) => {
     return (
-      <CardContainer className="inter-var inline-flex cursor-pointer">
+      <CardContainer
+        containerClassName="shrink-0"
+        className="inter-var inline-flex cursor-pointer"
+      >
         <CardBody className="group/card bg-shadow-violet/60 relative h-auto w-auto cursor-pointer rounded-[10px] p-4">
           <div>
             <CardItem3D translateZ={60} className="mt-4 w-full">
