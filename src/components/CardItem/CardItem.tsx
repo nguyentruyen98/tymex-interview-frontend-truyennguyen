@@ -8,6 +8,7 @@ import Image1 from "@/assets/images/image1.png";
 import Image2 from "@/assets/images/image2.png";
 import Image3 from "@/assets/images/image3.png";
 import Image4 from "@/assets/images/image4.png";
+import Image5 from "@/assets/images/image5.png";
 import Text from "@/components/Text/Text";
 import {
   CardBody,
@@ -38,10 +39,11 @@ const CardItem = memo(
     }, [onlineStatus]);
 
     const cartAvatar = useMemo(() => {
-      if (imageId <= 5) return Image1;
-      if (imageId <= 10) return Image2;
-      if (imageId <= 15) return Image3;
-      return Image4;
+      if (imageId <= 4) return Image1;
+      if (imageId <= 8) return Image2;
+      if (imageId <= 12) return Image3;
+      if (imageId <= 16) return Image4;
+      return Image5;
     }, [imageId]);
 
     return (
