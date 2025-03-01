@@ -11,19 +11,37 @@ const Footer = () => {
         <Text variant="title-xl">Navigation</Text>
         <div className="mt-8 grid grid-cols-3 grid-rows-1 gap-8">
           <div className="flex flex-col gap-3">
-            <Text variant="header-medium">Home</Text>
-            <Text variant="header-medium">About us</Text>
-            <Text variant="header-medium">Our teams</Text>
+            <Text cursor="pointer" variant="header-medium" isAnimations>
+              Home
+            </Text>
+            <Text cursor="pointer" variant="header-medium" isAnimations>
+              About us
+            </Text>
+            <Text cursor="pointer" variant="header-medium" isAnimations>
+              Our teams
+            </Text>
           </div>
           <div className="flex flex-col gap-3">
-            <Text variant="header-medium">Whitepaper</Text>
-            <Text variant="header-medium">Marketplace</Text>
-            <Text variant="header-medium">Roadmap</Text>
+            <Text cursor="pointer" variant="header-medium" isAnimations>
+              Whitepaper
+            </Text>
+            <Text cursor="pointer" variant="header-medium" isAnimations>
+              Marketplace
+            </Text>
+            <Text cursor="pointer" variant="header-medium" isAnimations>
+              Roadmap
+            </Text>
           </div>
           <div className="flex flex-col gap-3">
-            <Text variant="header-medium">FAQs</Text>
-            <Text variant="header-medium">News</Text>
-            <Text variant="header-medium">Community</Text>
+            <Text cursor="pointer" variant="header-medium" isAnimations>
+              FAQs
+            </Text>
+            <Text cursor="pointer" variant="header-medium" isAnimations>
+              News
+            </Text>
+            <Text cursor="pointer" variant="header-medium" isAnimations>
+              Community
+            </Text>
           </div>
         </div>
       </div>
@@ -33,11 +51,15 @@ const Footer = () => {
           <div className="mt-8 flex flex-col gap-8">
             <div className="flex gap-2">
               <PhoneIcon />
-              <Text variant="header-medium">01234568910</Text>
+              <Text cursor="pointer" variant="header-medium">
+                01234568910
+              </Text>
             </div>
             <div className="flex gap-2">
               <MessageIcon />
-              <Text variant="header-medium">tymex-talent@tyme.com</Text>
+              <Text className="index" cursor="pointer" variant="header-medium">
+                tymex-talent@tyme.com
+              </Text>
             </div>
           </div>
         </div>
@@ -51,13 +73,19 @@ const Footer = () => {
       </div>
       <div className="border-shadow-violet h-[0px] border-t lg:col-span-2 xl:col-span-3" />
       <div className="flex flex-col items-center gap-6 lg:col-span-2 lg:flex-row lg:justify-between xl:col-span-3">
-        <Text variant="header-medium">
+        <Text cursor="pointer" variant="header-medium">
           ©2023 Tyme - Edit. All Rights reserved.
         </Text>
         <div className="flex gap-6">
-          <Text variant="header-medium">Security</Text>
-          <Text variant="header-medium">Legal</Text>
-          <Text variant="header-medium">Privacy</Text>
+          <Text cursor="pointer" variant="header-medium" isAnimations>
+            Security
+          </Text>
+          <Text cursor="pointer" variant="header-medium" isAnimations>
+            Legal
+          </Text>
+          <Text cursor="pointer" variant="header-medium" isAnimations>
+            Privacy
+          </Text>
         </div>
       </div>
     </div>

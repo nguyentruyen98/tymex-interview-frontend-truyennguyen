@@ -44,5 +44,4 @@ export type TextProps = PropsWithChildren<VariantProps<typeof textVariants>> & {
   className?: string;
   asChild?: boolean;
   tag?: string;
-  isHoverable?: boolean;
 };
