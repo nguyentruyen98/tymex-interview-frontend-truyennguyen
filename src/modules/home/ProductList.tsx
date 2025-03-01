@@ -1,5 +1,7 @@
-import { memo, useMemo } from "react";
+import { forwardRef, memo, useEffect, useMemo, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 
+import { IProduct } from "@/apis/type";
 import Button from "@/components/Button/Button";
 import ButtonGroup from "@/components/ButtonGroup/ButtonGroup";
 import CardItem from "@/components/CardItem/CardItem";
@@ -14,17 +16,45 @@ type ProductListProps = {
   filter: FilterValue;
   searchValue: string;
   onChangeFilter: (value: string, name: keyof FilterValue) => void;
-  conNextPage: () => void;
 };
+
+type ProductsProps = {
+  isLoading?: boolean;
+  isFetching?: boolean;
+  isFetchingNextPage?: boolean;
+  products?: IProduct[];
+};
+
 const ProductList = memo(
   ({ filter, searchValue, onChangeFilter }: ProductListProps) => {
-    const { data, isLoading, isFetching, fetchNextPage, isFetchingNextPage } =
-      useGetProductList(filter, searchValue);
+    const {
+      data,
+      isLoading,
+      isFetching,
+      fetchNextPage,
+      isFetchingNextPage,
+      hasNextPage,
+    } = useGetProductList(filter, searchValue);
+    const { ref, inView } = useInView();
+
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+      if (!inView && !isFetchingNextPage) {
+        scrollRef.current?.scrollIntoView({
+          behavior: "smooth",
+          // inline: "start",
+          block: "nearest",
+        });
+      }
+    }, [inView, isFetchingNextPage]);
 
     const productList = useMemo(
       () => data.pages.flatMap(page => page),
       [data.pages],
     );
+
+    const isNotFound = !isLoading && !isFetching && productList.length === 0;
 
     return (
       <div className="lg:col-span-2 xl:col-span-3">
@@ -35,10 +65,51 @@ const ProductList = memo(
             onChangeFilter(value, "category");
           }}
         />
-        {productList.length === 0 && !isFetching && <ProductListNoResults />}
-        <div className="flex max-h-[2625px] flex-wrap justify-center gap-10 overflow-x-hidden overflow-y-auto lg:justify-between">
+        <Products
+          ref={scrollRef}
+          isFetching={isFetching}
+          isLoading={isLoading}
+          isFetchingNextPage={isFetchingNextPage}
+          products={productList}
+        />
+        <div className="mt-14 flex justify-center">
+          {!isNotFound && (
+            <Button
+              ref={ref}
+              size="large"
+              onClick={() => fetchNextPage()}
+              disabled={isFetchingNextPage || !hasNextPage}
+            >
+              View more
+            </Button>
+          )}
+        </div>
+      </div>
+    );
+  },
+);
+
+const Products = memo(
+  forwardRef<HTMLDivElement, ProductsProps>(
+    (
+      {
+        isFetching = false,
+        isLoading = false,
+        isFetchingNextPage = false,
+        products = [],
+      },
+      ref,
+    ) => {
+      const isNotFound = !isLoading && !isFetching && products.length === 0;
+
+      if (isNotFound) return <ProductListNoResults />;
+
+      if (isLoading || isFetching || isFetchingNextPage)
+        return <ProductListSkeleton />;
+      return (
+        <div className="flex max-h-[2625px] flex-wrap justify-center gap-10 overflow-x-hidden overflow-y-auto py-2 lg:justify-between">
           {(isLoading || isFetching) && <ProductListSkeleton />}
-          {productList.map(item => {
+          {products.map(item => {
             const {
               id,
               category,
@@ -62,16 +133,11 @@ const ProductList = memo(
               />
             );
           })}
-          {isFetchingNextPage && <ProductListSkeleton />}
+          <div className="basis-full" ref={ref} />
         </div>
-        <div className="mt-14 flex justify-center">
-          <Button size="large" onClick={() => fetchNextPage()}>
-            {isFetchingNextPage ? "Loading" : "View more"}
-          </Button>
-        </div>
-      </div>
-    );
-  },
+      );
+    },
+  ),
 );
 
 export default ProductList;

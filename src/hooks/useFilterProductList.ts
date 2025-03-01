@@ -66,15 +66,6 @@ export const useFilterProductList = () => {
     [filter, filterOnSearch.category],
   );
 
-  const handleNextPage = useCallback(
-    () =>
-      setFilterOnSearch(prevState => ({
-        ...prevState,
-        page: prevState.page + 1,
-      })),
-    [],
-  );
-
   const handleResetFilter = useCallback(() => {
     const filterReset = {
       ...DEFAULT_FILTER,
@@ -90,6 +81,5 @@ export const useFilterProductList = () => {
     handleChangeFilter,
     handleResetFilter,
     handleFilter,
-    handleNextPage,
   };
 };

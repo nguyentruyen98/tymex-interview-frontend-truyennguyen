@@ -10,11 +10,13 @@ const Button = ({
   variant,
   size,
   onClick,
+  disabled,
 }: ButtonProps) => {
   return (
     <button
       className={cn(buttonVariants({ variant, size, className }))}
       onClick={onClick}
+      disabled={disabled}
     >
       <Text variant="header">{children}</Text>
     </button>

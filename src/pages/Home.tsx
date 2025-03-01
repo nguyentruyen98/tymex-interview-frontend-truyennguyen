@@ -7,6 +7,7 @@ import { useFilterProductList } from "@/hooks/useFilterProductList";
 import { usePagination } from "@/hooks/usePagination";
 import { useSearchProductList } from "@/hooks/useSearchProductList";
 import Filter from "@/modules/home/Filter";
+import Graph from "@/modules/home/Graph";
 import Hero from "@/modules/home/Hero";
 import ProductList from "@/modules/home/ProductList";
 
@@ -17,7 +18,6 @@ const Home = () => {
     handleResetFilter,
     handleFilter,
     filterOnSearch,
-    handleNextPage,
   } = useFilterProductList();
 
   const { deferredSearchValue, handleChangeSearch } = useSearchProductList();
@@ -34,12 +34,12 @@ const Home = () => {
           onChangeSearch={handleChangeSearch}
         />
         <ProductList
-          onNextPage={handleNextPage}
           filter={filterOnSearch}
           searchValue={deferredSearchValue}
           onChangeFilter={handleChangeFilter}
         />
       </div>
+      <Graph />
     </>
   );
 };
