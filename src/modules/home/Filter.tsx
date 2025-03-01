@@ -15,20 +15,21 @@ import { FilterValue } from "@/types";
 
 type FilterProps = {
   filter: FilterValue;
-  onChangeTheme: (value: FilterValue["theme"]) => void;
-  onChangeTier: (value: FilterValue["tier"]) => void;
   onResetFilter: () => void;
+  onChangeFilter: (value: string, name: keyof FilterValue) => void;
   onChangeSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onFilter: () => void;
 };
 
 const Filter = ({
   filter,
-  onChangeTheme,
-  onChangeTier,
   onResetFilter,
   onChangeSearch,
+  onChangeFilter,
+  onFilter,
 }: FilterProps) => {
-  const { tier, theme } = filter;
+  const { tier, theme, price, time } = filter;
+
   return (
     <div>
       <Input
@@ -40,30 +41,40 @@ const Filter = ({
         <Slider title="PRICE" minTitle="0.01 ETH" maxTitle="200 ETH" />
         <Select
           label="TIER"
-          defaultValue={tier}
+          defaultValue="All"
           value={tier}
           options={FILTER_TIER_OPTIONS}
-          onValueChange={onChangeTier}
+          onValueChange={value => onChangeFilter(value, "tier")}
         />
         <Select
           label="THEME"
-          defaultValue={theme}
+          defaultValue="All"
           value={theme}
           options={FILTER_THEME_OPTIONS}
-          onValueChange={onChangeTheme}
+          onValueChange={value => onChangeFilter(value, "theme")}
         />
-        <Select label="TIME" defaultValue="All" options={FILTER_TIME_OPTIONS} />
+        <Select
+          label="TIME"
+          defaultValue="All"
+          value={time}
+          options={FILTER_TIME_OPTIONS}
+          onValueChange={value => onChangeFilter(value, "time")}
+        />
         <Select
           label="PRICE"
           defaultValue="All"
+          value={price}
           options={FILTER_PRICE_OPTIONS}
+          onValueChange={value => onChangeFilter(value, "price")}
         />
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2" onClick={onResetFilter}>
             <CloseIcon />
             <Text variant="header">Reset filter</Text>
           </div>
-          <Button className="px-10">Search</Button>
+          <Button onClick={onFilter} className="px-10">
+            Search
+          </Button>
         </div>
       </div>
     </div>

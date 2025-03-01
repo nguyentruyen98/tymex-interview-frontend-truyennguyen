@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 
 const Footer = () => {
   return (
-    <div className="bg-secondary relative grid grid-cols-1 grid-rows-3 gap-10 px-8 py-6 pb-20 lg:grid-cols-2 lg:grid-rows-2 lg:px-16 lg:py-10 lg:pb-40 xl:grid-cols-3 xl:grid-rows-1 xl:py-15 xl:pb-52">
+    <div className="bg-secondary grid w-full grid-cols-1 grid-rows-3 gap-10 px-8 py-6 pb-20 lg:grid-cols-2 lg:grid-rows-2 lg:px-16 lg:py-10 lg:pb-40 xl:grid-cols-3 xl:grid-rows-1 xl:py-15 xl:pb-52">
       <div className="xl:col-span-1">
         <Text variant="title-xl">Navigation</Text>
         <div className="mt-8 grid grid-cols-3 grid-rows-1 gap-8">

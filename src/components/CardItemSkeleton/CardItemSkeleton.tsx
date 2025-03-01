@@ -1,5 +1,4 @@
 import { Skeleton } from "@/components/ui/skeleton";
-import { withFadeIn } from "@/hoc/withFadeIn";
 
 const CardItemSkeleton = () => {
   return (
@@ -14,6 +13,4 @@ const CardItemSkeleton = () => {
   );
 };
 
-const CardItemSkeletonWithAnimation = withFadeIn(CardItemSkeleton);
-
-export default CardItemSkeletonWithAnimation;
+export default CardItemSkeleton;

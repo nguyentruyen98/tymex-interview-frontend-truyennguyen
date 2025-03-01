@@ -15,7 +15,7 @@ import {
   CardContainer,
   CardItem as CardItem3D,
 } from "@/components/ui/3d-card";
-import { withFadeIn } from "@/hoc/withFadeIn";
+import { withFadeIn } from "@/hocs/withFadeIn";
 import { cn } from "@/lib/utils";
 
 import { CARD_THEME_COLOR } from "./CardItem.constants";

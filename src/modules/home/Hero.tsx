@@ -3,6 +3,10 @@ import Background from "@/assets/icons/bg.svg";
 import NewArrival from "@/assets/icons/new.svg";
 import TextBackground from "@/assets/icons/text-bg.svg";
 import image6 from "@/assets/image6.png";
+import Image1 from "@/assets/images/image1.png";
+import Image2 from "@/assets/images/image2.png";
+import Image3 from "@/assets/images/image3.png";
+import Image5 from "@/assets/images/image5.png";
 import CardArrival from "@/components/CardArrival/CardArrival";
 import Text from "@/components/Text/Text";
 
@@ -44,10 +48,10 @@ const Hero = () => {
             <Background />
           </div>
           <div className="bottom-0 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8 xl:justify-start xl:gap-20 xl:px-20">
-            <CardArrival name="Assassin" />
-            <CardArrival name="Assassin" />
-            <CardArrival name="Assassin" />
-            <CardArrival name="Assassin" />
+            <CardArrival avatar={Image1} name="Assassin" />
+            <CardArrival avatar={Image3} name="Neon Guy" />
+            <CardArrival avatar={Image2} name="Mafia England" />
+            <CardArrival avatar={Image5} name="Bassketball Girl" />
           </div>
         </div>
       </div>

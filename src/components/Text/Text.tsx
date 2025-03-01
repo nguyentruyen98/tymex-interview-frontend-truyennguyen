@@ -1,6 +1,8 @@
 import { Slot } from "@radix-ui/react-slot";
 import { memo } from "react";
 
+import { WithAnimationProps } from "@/hocs/type";
+import { withTextAnimation } from "@/hocs/withTextAnimation";
 import { cn } from "@/lib/utils";
 
 import { TextProps, textVariants } from "./Text.type";
@@ -14,7 +16,7 @@ const Text = memo(
     cursor,
     asChild = false,
     tag = "p",
-  }: TextProps) => {
+  }: WithAnimationProps<TextProps>) => {
     const Comp = asChild ? Slot : tag;
     return (
       <Comp className={cn(textVariants({ variant, color, cursor, className }))}>
@@ -24,4 +26,6 @@ const Text = memo(
   },
 );
 
-export default Text;
+const TextWithAnimation = withTextAnimation(Text);
+
+export default TextWithAnimation;

@@ -20,10 +20,16 @@ export const textVariants = cva("relative", {
       "shadow-gray": "text-shadow-gray",
       "light-gray": "text-light-gray",
       gradient:
-        "bg-linear-to-r from-[#DA458F] to-[#DA34DD] bg-clip-text text-transparent after:absolute after:bottom-0 after:left-1 after:block after:h-0.5 after:w-4 after:bg-linear-to-r after:from-[#DA458F] after:to-[#DA34DD] after:content-['']",
+        "!bg-linear-to-r !from-[#DA458F] !to-[#DA34DD] !bg-clip-text !text-transparent",
+    },
+    style: {
+      none: "",
+      underline:
+        " after:absolute after:bottom-0 after:left-1 after:block after:h-0.5 after:w-4 after:bg-linear-to-r after:from-[#DA458F] after:to-[#DA34DD] after:content-['']",
     },
     cursor: {
       pointer: "cursor-pointer",
+      style: "none",
       none: "",
     },
   },
@@ -38,4 +44,5 @@ export type TextProps = PropsWithChildren<VariantProps<typeof textVariants>> & {
   className?: string;
   asChild?: boolean;
   tag?: string;
+  isHoverable?: boolean;
 };
