@@ -1,6 +1,6 @@
 import * as motion from "motion/react-client";
 
-export const withPageTransitions = <T extends object>(
+export const withPageAnimation = <T extends object>(
   WrappedComponent: React.ComponentType<T>,
 ) => {
   return (props: T) => (

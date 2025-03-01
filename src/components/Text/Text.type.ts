@@ -4,7 +4,7 @@ import { PropsWithChildren } from "react";
 export const textVariants = cva("relative", {
   variants: {
     variant: {
-      header: "text-sm leading-6 font-semibold sm:text-base",
+      header: "text-sm leading-6 font-semibold lg:text-base",
       "header-medium": "text-base leading-6 font-medium",
       caption: "text-xs leading-5 font-medium",
       body: "text-sm leading-5 font-medium",
@@ -12,7 +12,7 @@ export const textVariants = cva("relative", {
       "title-xl": "font-drone text-xl leading-8 font-bold",
       "title-sm": "font-drone text-sm leading-5 font-bold",
       "title-7xl":
-        "font-drone text-3xl sm:text-4xl xl:text-7xl leading-[88px] font-bold",
+        "font-drone text-xl sm:text-3xl lg:text-4xl xl:text-7xl leading-[88px] font-bold",
     },
     color: {
       primary: "text-white",

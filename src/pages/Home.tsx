@@ -1,8 +1,5 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router";
-
 import { Vortex } from "@/components/vortex";
-import { withPageTransitions } from "@/hocs/withPageTransitions";
+import { withPageAnimation } from "@/hocs/withPageAnimation";
 import { useFilterProductList } from "@/hooks/useFilterProductList";
 import { useSearchProductList } from "@/hooks/useSearchProductList";
 import Filter from "@/modules/home/Filter";
@@ -43,6 +40,6 @@ const Home = () => {
   );
 };
 
-const HomeWithTransition = withPageTransitions(Home);
+const HomeWithTransition = withPageAnimation(Home);
 
 export default HomeWithTransition;

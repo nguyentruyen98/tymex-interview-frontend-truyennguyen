@@ -1,35 +1,25 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 import Text from "@/components/Text/Text";
+import { HEADER_MENU } from "@/constants";
 
 const MainNav = () => {
-  return (
-    <div className="hidden gap-7 sm:flex lg:gap-12 xl:gap-[60px]">
-      <Link to="/">
-        <Text isAnimations variant="title-lg">
-          Home
-        </Text>
-      </Link>
-      <Link to="/about">
-        <Text isAnimations variant="title-lg">
-          About Us
-        </Text>
-      </Link>
-      <Link to="/test">
-        <Text isAnimations variant="title-lg">
-          Our Team
-        </Text>
-      </Link>
+  const { pathname } = useLocation();
 
-      <Text isAnimations variant="title-lg" color="gradient" cursor="pointer">
-        Marketplace
-      </Text>
-      <Text isAnimations variant="title-lg">
-        Roadmap
-      </Text>
-      <Text isAnimations variant="title-lg">
-        Whitepaper
-      </Text>
+  return (
+    <div className="hidden gap-4 sm:flex sm:gap-7 lg:gap-12 xl:gap-[60px]">
+      {HEADER_MENU.map(({ path, label }) => (
+        <Link to={path} key={path}>
+          <Text
+            isAnimations
+            variant="title-lg"
+            color={pathname === path ? "gradient" : "primary"}
+            style={pathname === path ? "underline" : "none"}
+          >
+            {label}
+          </Text>
+        </Link>
+      ))}
     </div>
   );
 };

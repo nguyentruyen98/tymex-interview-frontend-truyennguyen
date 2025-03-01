@@ -37,3 +37,21 @@ export const BUTTON_GROUP_OPTIONS = [
   { label: "Epic", isActive: false, value: "Epic" },
   { label: "Rare", isActive: false, value: "Rare" },
 ];
+
+export const APP_ROUTES = {
+  HOME: "/",
+  ABOUT: "/about",
+  OUR_TEAM: "/our-team",
+  MARKETPLACE: "/marketplace",
+  ROADMAP: "/roadmap",
+  WHITEPAPER: "/whitepaper",
+};
+
+export const HEADER_MENU = [
+  { label: "Home", path: APP_ROUTES.HOME },
+  { label: "About us", path: APP_ROUTES.ABOUT },
+  { label: "Out Team", path: APP_ROUTES.OUR_TEAM },
+  { label: "Marketplace", path: APP_ROUTES.MARKETPLACE },
+  { label: "Roadmap", path: APP_ROUTES.ROADMAP },
+  { label: "Whitepaper", path: APP_ROUTES.WHITEPAPER },
+];

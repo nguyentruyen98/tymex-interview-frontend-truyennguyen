@@ -16,10 +16,15 @@ const Text = memo(
     cursor,
     asChild = false,
     tag = "p",
+    style,
   }: WithAnimationProps<TextProps>) => {
     const Comp = asChild ? Slot : tag;
     return (
-      <Comp className={cn(textVariants({ variant, color, cursor, className }))}>
+      <Comp
+        className={cn(
+          textVariants({ variant, color, cursor, style, className }),
+        )}
+      >
         {children}
       </Comp>
     );
