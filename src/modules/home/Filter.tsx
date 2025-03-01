@@ -16,7 +16,7 @@ import { FilterValue } from "@/types";
 type FilterProps = {
   filter: FilterValue;
   onResetFilter: () => void;
-  onChangeFilter: (value: string, name: keyof FilterValue) => void;
+  onChangeFilter: (value: string | number[], name: keyof FilterValue) => void;
   onChangeSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onFilter: () => void;
 };
@@ -28,8 +28,7 @@ const Filter = ({
   onChangeFilter,
   onFilter,
 }: FilterProps) => {
-  const { tier, theme, price, time } = filter;
-
+  const { tier, theme, price, time, priceRange } = filter;
   return (
     <div>
       <Input
@@ -38,7 +37,18 @@ const Filter = ({
         onChange={onChangeSearch}
       />
       <div className="mt-10 space-y-10">
-        <Slider title="PRICE" minTitle="0.01 ETH" maxTitle="200 ETH" />
+        <Slider
+          onChange={(value: number[]) => onChangeFilter(value, "priceRange")}
+          range
+          title="PRICE"
+          minTitle="0.01 ETH"
+          maxTitle="200 ETH"
+          max={200}
+          min={0.01}
+          step={0.01}
+          defaultValue={[0, 200]}
+          value={priceRange}
+        />
         <Select
           label="TIER"
           defaultValue="All"

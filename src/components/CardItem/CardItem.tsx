@@ -4,11 +4,11 @@ import ETH from "@/assets/icons/eth.svg";
 import Heart from "@/assets/icons/heart.svg";
 import RoundedVerifiedOffline from "@/assets/icons/rounded-verified-offline.svg";
 import RoundedVerifiedOnline from "@/assets/icons/rounded-verified-online.svg";
-import Image1 from "@/assets/images/image1.png";
-import Image2 from "@/assets/images/image2.png";
-import Image3 from "@/assets/images/image3.png";
-import Image4 from "@/assets/images/image4.png";
-import Image5 from "@/assets/images/image5.png";
+import Image1 from "@/assets/images/image1.webp";
+import Image2 from "@/assets/images/image2.webp";
+import Image3 from "@/assets/images/image3.webp";
+import Image4 from "@/assets/images/image4.webp";
+import Image5 from "@/assets/images/image5.webp";
 import Text from "@/components/Text/Text";
 import {
   CardBody,

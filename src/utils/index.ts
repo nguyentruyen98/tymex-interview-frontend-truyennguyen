@@ -24,6 +24,10 @@ export const buildUrlApiFormObject = (filter: any) => {
     if (key === "time") {
       queryString += `&_sort=createdAt&_order=${encodeURIComponent(value)}`;
     }
+    if (key === "priceRange") {
+      const [min = 0, max = 2000] = value;
+      queryString += `&&price_gte=${encodeURIComponent(min)}&price_lte=${encodeURIComponent(max)}`;
+    }
   });
   return queryString;
 };

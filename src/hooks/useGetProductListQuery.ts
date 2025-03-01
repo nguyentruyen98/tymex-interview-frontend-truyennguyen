@@ -1,5 +1,4 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { useState } from "react";
 
 import { getProductList } from "@/apis/getProductList";
 import { FilterValue } from "@/types";
@@ -15,6 +14,7 @@ export const useGetProductList = (filter: FilterValue, searchValue: string) => {
       filter.tier,
       filter.time,
       filter.page,
+      filter.priceRange,
     ],
     queryFn: ({ pageParam }) => {
       return getProductList(filter, searchValue, pageParam);

@@ -1,5 +1,4 @@
-import { memo, useEffect, useRef } from "react";
-import { useInView } from "react-intersection-observer";
+import { memo, useMemo } from "react";
 
 import Button from "@/components/Button/Button";
 import ButtonGroup from "@/components/ButtonGroup/ButtonGroup";
@@ -21,16 +20,12 @@ const ProductList = memo(
   ({ filter, searchValue, onChangeFilter }: ProductListProps) => {
     const { data, isLoading, isFetching, fetchNextPage, isFetchingNextPage } =
       useGetProductList(filter, searchValue);
-    const { ref, inView } = useInView();
-    const scrollRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-      if (inView && !isFetchingNextPage) {
-        scrollRef.current?.scrollIntoView({ behavior: "smooth" });
-      }
-    }, [inView, isFetchingNextPage]);
+    const productList = useMemo(
+      () => data.pages.flatMap(page => page),
+      [data.pages],
+    );
 
-    console.log("data", data.pages);
     return (
       <div className="lg:col-span-2 xl:col-span-3">
         <ButtonGroup
@@ -40,40 +35,37 @@ const ProductList = memo(
             onChangeFilter(value, "category");
           }}
         />
-        {data.pages.length === 0 && <ProductListNoResults />}
+        {productList.length === 0 && !isFetching && <ProductListNoResults />}
         <div className="flex max-h-[2625px] flex-wrap justify-center gap-10 overflow-x-hidden overflow-y-auto lg:justify-between">
           {(isLoading || isFetching) && <ProductListSkeleton />}
-          {data.pages
-            .flatMap(page => page)
-            .map(item => {
-              const {
-                id,
-                category,
-                price,
-                author,
-                title,
-                isFavorite,
-                theme,
-                imageId,
-              } = item;
-              return (
-                <CardItem
-                  key={id}
-                  isFavorite={isFavorite}
-                  category={category}
-                  author={author}
-                  title={title}
-                  price={price}
-                  theme={theme}
-                  imageId={imageId}
-                />
-              );
-            })}
-          <div ref={scrollRef} />
+          {productList.map(item => {
+            const {
+              id,
+              category,
+              price,
+              author,
+              title,
+              isFavorite,
+              theme,
+              imageId,
+            } = item;
+            return (
+              <CardItem
+                key={id}
+                isFavorite={isFavorite}
+                category={category}
+                author={author}
+                title={title}
+                price={price}
+                theme={theme}
+                imageId={imageId}
+              />
+            );
+          })}
           {isFetchingNextPage && <ProductListSkeleton />}
         </div>
         <div className="mt-14 flex justify-center">
-          <Button ref={ref} size="large" onClick={() => fetchNextPage()}>
+          <Button size="large" onClick={() => fetchNextPage()}>
             {isFetchingNextPage ? "Loading" : "View more"}
           </Button>
         </div>

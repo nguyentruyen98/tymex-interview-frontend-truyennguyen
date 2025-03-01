@@ -9,6 +9,7 @@ const DEFAULT_FILTER: FilterValue = {
   price: "All",
   category: [],
   page: 0,
+  priceRange: [0, 200],
 };
 
 export const useFilterProductList = () => {

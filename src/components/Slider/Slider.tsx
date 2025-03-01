@@ -12,8 +12,9 @@ const Slider = ({
   maxTitle = "",
   minTitle = "",
   className,
+  onChange,
   ...props
-}: Omit<SliderProps, "$$typeof">) => {
+}: SliderProps) => {
   return (
     <div className={cn("flex flex-col gap-5", className)}>
       {title && <Text variant="header">{title}</Text>}
@@ -27,11 +28,7 @@ const Slider = ({
           handle: "handle",
           track: "track",
         }}
-        range
-        max={200}
-        min={0.01}
-        step={0.01}
-        defaultValue={[0, 200]}
+        onChange={onChange}
         {...props}
       />
       {maxTitle && minTitle && (

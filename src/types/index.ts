@@ -5,4 +5,5 @@ export type FilterValue = {
   price: "All" | "desc" | "asc";
   category: string[];
   page: number;
+  priceRange: [number, number];
 };
