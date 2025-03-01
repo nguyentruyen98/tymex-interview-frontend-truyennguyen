@@ -1,14 +1,14 @@
 import { memo } from "react";
 
-import backGround from "@/assets/images/card_arrival_bg.png";
-import exampleCardArrivalAvatar from "@/assets/images/example_card_arrival_avatar.png";
+import backGround from "@/assets/images/card_arrival_bg.webp";
+import defaultCardArrivalAvatar from "@/assets/images/image1.webp";
 import Text from "@/components/Text/Text";
 import { CardContainer, CardItem } from "@/components/ui/3d-card";
 
 import { CardArrivalProps } from "./CardArrival.type";
 
 const CardArrival = memo(
-  ({ name, avatar = exampleCardArrivalAvatar }: CardArrivalProps) => {
+  ({ name, avatar = defaultCardArrivalAvatar }: CardArrivalProps) => {
     return (
       <CardContainer className="inline-flex cursor-pointer flex-col items-center">
         <CardItem translateZ="100" className="relative">

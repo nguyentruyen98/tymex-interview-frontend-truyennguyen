@@ -5,7 +5,6 @@ import Button from "@/components/Button/Button";
 import ButtonGroup from "@/components/ButtonGroup/ButtonGroup";
 import CardItem from "@/components/CardItem/CardItem";
 import { BUTTON_GROUP_OPTIONS } from "@/constants";
-import useIsFirstRender from "@/hooks/isFirstRender";
 import { useGetProductList } from "@/hooks/useGetProductListQuery";
 import { FilterValue } from "@/types";
 
@@ -41,7 +40,7 @@ const ProductList = memo(
             onChangeFilter(value, "category");
           }}
         />
-        {/* {pages.length === 0 && <ProductListNoResults />} */}
+        {data.pages.length === 0 && <ProductListNoResults />}
         <div className="flex max-h-[2625px] flex-wrap justify-center gap-10 overflow-x-hidden overflow-y-auto lg:justify-between">
           {(isLoading || isFetching) && <ProductListSkeleton />}
           {data.pages
@@ -76,15 +75,6 @@ const ProductList = memo(
         <div className="mt-14 flex justify-center">
           <Button ref={ref} size="large" onClick={() => fetchNextPage()}>
             {isFetchingNextPage ? "Loading" : "View more"}
-          </Button>
-          <Button
-            ref={ref}
-            size="large"
-            onClick={() =>
-              scrollRef.current?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            View more
           </Button>
         </div>
       </div>
