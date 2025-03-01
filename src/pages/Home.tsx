@@ -4,7 +4,6 @@ import { Link } from "react-router";
 import { Vortex } from "@/components/vortex";
 import { withPageTransitions } from "@/hocs/withPageTransitions";
 import { useFilterProductList } from "@/hooks/useFilterProductList";
-import { usePagination } from "@/hooks/usePagination";
 import { useSearchProductList } from "@/hooks/useSearchProductList";
 import Filter from "@/modules/home/Filter";
 import Graph from "@/modules/home/Graph";
