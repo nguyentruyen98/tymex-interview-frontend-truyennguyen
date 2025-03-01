@@ -16,6 +16,26 @@
   --color-light-gray: #d6d6d6;
   --color-secondary: #17161a;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #777777;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffcc21;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #d4a800;
+}
 .ant-tooltip-inner {
   background-image: linear-gradient(to right, #da458f, #da34dd) !important;
   font-weight: 600;

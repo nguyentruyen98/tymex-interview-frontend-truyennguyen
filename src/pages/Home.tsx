@@ -1,0 +1,49 @@
+import { motion } from "framer-motion";
+import { Link } from "react-router";
+
+import { Vortex } from "@/components/vortex";
+import { withPageTransitions } from "@/hocs/withPageTransitions";
+import { useFilterProductList } from "@/hooks/useFilterProductList";
+import { usePagination } from "@/hooks/usePagination";
+import { useSearchProductList } from "@/hooks/useSearchProductList";
+import Filter from "@/modules/home/Filter";
+import Hero from "@/modules/home/Hero";
+import ProductList from "@/modules/home/ProductList";
+
+const Home = () => {
+  const {
+    filter,
+    handleChangeFilter,
+    handleResetFilter,
+    handleFilter,
+    filterOnSearch,
+    handleNextPage,
+  } = useFilterProductList();
+
+  const { deferredSearchValue, handleChangeSearch } = useSearchProductList();
+
+  return (
+    <>
+      <Hero />
+      <div className="grid grid-cols-1 gap-10 px-8 py-12 lg:grid-cols-3 lg:px-20 xl:grid-cols-4">
+        <Filter
+          filter={filter}
+          onFilter={handleFilter}
+          onChangeFilter={handleChangeFilter}
+          onResetFilter={handleResetFilter}
+          onChangeSearch={handleChangeSearch}
+        />
+        <ProductList
+          onNextPage={handleNextPage}
+          filter={filterOnSearch}
+          searchValue={deferredSearchValue}
+          onChangeFilter={handleChangeFilter}
+        />
+      </div>
+    </>
+  );
+};
+
+const HomeWithTransition = withPageTransitions(Home);
+
+export default HomeWithTransition;

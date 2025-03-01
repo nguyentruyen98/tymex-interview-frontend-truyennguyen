@@ -1,36 +1,114 @@
 import "./App.css";
 
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+  useQueryClient,
+} from "@tanstack/react-query";
+import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  useLocation,
+  useRoutes,
+} from "react-router";
 
 import viteLogo from "/vite.svg";
+import Text from "@/components/Text/Text";
+import MainLayout from "@/layouts/MainLayout/MainLayout";
 
 import ETH from "./assets/icons/eth.svg";
 import Heart from "./assets/icons/heart.svg";
 import RoundedVerified from "./assets/icons/rounded-verified.svg";
 import image from "./assets/image1.png";
 import image2 from "./assets/image2.jpg";
+import image3 from "./assets/image3.png";
+import image4 from "./assets/image4.png";
 import { CardBody, CardContainer, CardItem } from "./components/3d-card";
 import { Vortex } from "./components/vortex";
+import { Gallery } from "./pages/About";
+import Home from "./pages/Home";
+const queryClient = new QueryClient();
 
 function App() {
   const [count, setCount] = useState(0);
+  const location = useLocation();
 
+  // box-shadow: -12px 12px #101010;
+  // shadow-[0_-12px_0_-12_#101010]
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route
+            path="about"
+            element={
+              <Gallery
+                title="Amsterdam Zuid nightwalk"
+                titleWidth={8.2}
+                category="zuid"
+                alt="A building in Amsterdam Zuid at night"
+              />
+            }
+          />
+          <Route path="test" element={<p className="text-white">test</p>} />
+        </Route>
+        {/* <Route path="about" element={<About />} />
+
+        <Route element={<AuthLayout />}>
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Route>
+
+        <Route path="concerts">
+          <Route index element={<ConcertsHome />} />
+          <Route path=":city" element={<City />} />
+          <Route path="trending" element={<Trending />} />
+        </Route> */}
+      </Routes>
+      {/* <div>
+        <div className="relative">
+          <img
+            className="relative z-10 h-[168px] w-[200px] object-cover object-top"
+            src={image4}
+            alt="Avatar"
+          />
+          <img
+            src={image3}
+            className="lea absolute bottom-[-1px] h-[120px] w-[200px] border border-[#FBC625] object-cover shadow-[-12px_12px_#101010]"
+          />
+        </div>
+        <Text className="mt-6" variant="title-lg">
+          Assassin
+        </Text>
+        <Text className="mt-6 text-sm" variant="title-sm">
+          Assassin
+        </Text>
+      </div> */}
       {/* // <Vortex
-    //   rangeY={1000}
-    //   particleCount={5}
-    //   rangeSpeed={0.1}
-    //   baseHue={200}
-    //   rangeRadius={10}
-    //   baseRadius={5}
+      //   rangeY={1000}
+      //   particleCount={5}
+      //   rangeSpeed={0.1}
+      //   baseHue={200}
+      //   rangeRadius={10}
+      //   baseRadius={5}
     // >
    
     // </Vortex> */}
+      {/* <Text>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam ea,
+        iusto ipsum est at nihil. At tenetur maiores accusamus facilis magni in
+        explicabo quia laudantium minus rerum. Debitis, enim quas.
+      </Text>
       <CardContainer className="inter-var">
+        <Text variant="title">Assassin</Text>
         <CardBody className="group/card relative h-auto w-auto rounded-xl border border-black/[0.1] bg-gray-50 p-6 sm:w-[30rem] dark:border-white/[0.2] dark:bg-black dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]">
-          <CardItem
-            translateZ="50"
+            <CardItem
+              translateZ="50"
             className="text-xl font-bold text-neutral-600 dark:text-white"
           >
             Make things float in air
@@ -161,8 +239,8 @@ function App() {
             Ghozali_Ghozalu
           </p>
         </div>
-      </div>
-    </>
+      </div> */}
+    </QueryClientProvider>
   );
 }
 

@@ -139,7 +139,6 @@ export const Vortex = (props: VortexProps) => {
     vy = lerp(particleProps[i4], Math.sin(n), 0.5);
     life = particleProps[i5];
     ttl = particleProps[i6];
-    console.log("life", life, ttl);
     speed = particleProps[i7];
     x2 = x + vx * speed;
     y2 = y + vy * speed;
