@@ -16,7 +16,7 @@ const DummyPage = memo(({ title }: DummyPageProps) => {
       <Text variant="title-7xl" color="gradient">
         {`${title} page`}
       </Text>
-      <Text variant="title-lg">
+      <Text className="text-center" variant="title-lg">
         This page is in progress, please come back later
       </Text>
       <Button className="mt-10" onClick={() => navigate(APP_ROUTES.HOME)}>

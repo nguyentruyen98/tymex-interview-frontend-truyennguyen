@@ -5,24 +5,24 @@
   src: url("../assets/fonts/dronerangerpro_bold.otf");
 }
 
+@plugin 'tailwindcss-animate';
+
 @import "tailwindcss";
 
 ::-webkit-scrollbar {
+  position: absolute;
   width: 6px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #777777;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #ffcc21;
   border-radius: 3px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #d4a800;
 }

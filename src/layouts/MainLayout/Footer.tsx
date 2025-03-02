@@ -78,7 +78,7 @@ const Footer = () => {
       <div className="lg:col-span-2 xl:col-span-1">
         <Text variant="title-xl">Subscribe to receive our latest update</Text>
         <div className="mt-8 flex flex-row gap-5">
-          <Input className="border-white" placeholder="Your email address" />
+          <Input className="border-white pl-4" placeholder="Your email address" />
           <Button className="px-8 lg:px-12">Subscribe</Button>
         </div>
       </div>
