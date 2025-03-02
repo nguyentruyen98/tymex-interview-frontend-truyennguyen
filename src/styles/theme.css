@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --font-drone: "Drone Ranger Pro", "sans-serif";
+  --breakpoint-xs: 28rem;
+  --breakpoint-lg: 64.1rem;
+  --color-primary-gradient: linear-gradient(to right, #da458f, #da34dd);
+  --color-shadow-gray: #89888b;
+  --color-shadow-violet: #3a3841;
+  --color-light-gray: #d6d6d6;
+  --color-secondary: #17161a;
+  --color-neon-violet: #dd5afe;
+  --color-blue-violet: #6366f1;
+  --color-orange-peach: #fe955a;
+  --color-golden-yellow: #f1da63;
+  --color-vibrant-green: #49dd81;
+  --color-cyan-aqua: #22b4c6;
+  --color-red-coral: #fe5a5a;
+  --color-pink-magenta: #f163d2;
+  --color-cyber-magenta: #da458f;
+  --color-neon-purple: #da34dd;
+}
