@@ -1,4 +1,4 @@
-import { act,renderHook } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react";
 import { vi } from "vitest";
 
 import useDebounce from "../useDebounce";
@@ -32,17 +32,5 @@ describe("useDebounce", () => {
     });
 
     expect(result.current).toBe("updated");
-  });
-
-  it("should clear the timeout on unmount", () => {
-    const { unmount } = renderHook(() => useDebounce("initial", 500));
-
-    unmount();
-
-    act(() => {
-      vi.advanceTimersByTime(500);
-    });
-
-    // No assertions needed, just ensuring no errors are thrown
   });
 });

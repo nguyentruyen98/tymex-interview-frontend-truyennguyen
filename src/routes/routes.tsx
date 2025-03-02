@@ -6,7 +6,7 @@ import MainLayout from "@/layouts/MainLayout/MainLayout";
 import Home from "@/pages/Home";
 
 const About = lazy(() => import("@/pages/About"));
-const OutTeam = lazy(() => import("@/pages/OutTeam"));
+const OurTeam = lazy(() => import("@/pages/OurTeam"));
 const Marketplace = lazy(() => import("@/pages/Marketplace"));
 const Roadmap = lazy(() => import("@/pages/Roadmap"));
 const Whitepaper = lazy(() => import("@/pages/Whitepaper"));
@@ -17,7 +17,7 @@ export const routes = createBrowserRouter([
     children: [
       { path: APP_ROUTES.HOME, element: <Home /> },
       { path: APP_ROUTES.ABOUT, element: <About /> },
-      { path: APP_ROUTES.OUR_TEAM, element: <OutTeam /> },
+      { path: APP_ROUTES.OUR_TEAM, element: <OurTeam /> },
       { path: APP_ROUTES.MARKETPLACE, element: <Marketplace /> },
       { path: APP_ROUTES.ROADMAP, element: <Roadmap /> },
       { path: APP_ROUTES.WHITEPAPER, element: <Whitepaper /> },

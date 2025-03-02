@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { vi } from "vitest";
+import { Mock, vi } from "vitest";
 
 import { useGetProductList } from "@/hooks/useGetProductListQuery";
 import { FilterValue } from "@/types";
@@ -30,7 +30,7 @@ describe("ProductList", () => {
   const onChangeFilter = vi.fn();
 
   it("should render loading state initially", () => {
-    (useGetProductList as vi.Mock).mockReturnValue({
+    (useGetProductList as Mock).mockReturnValue({
       data: { pages: [] },
       isLoading: true,
       isFetching: false,
@@ -52,7 +52,7 @@ describe("ProductList", () => {
   });
 
   it("should render product list", () => {
-    (useGetProductList as vi.Mock).mockReturnValue({
+    (useGetProductList as Mock).mockReturnValue({
       data: {
         pages: [
           [
@@ -89,7 +89,7 @@ describe("ProductList", () => {
   });
 
   it("should handle empty product list", () => {
-    (useGetProductList as vi.Mock).mockReturnValue({
+    (useGetProductList as Mock).mockReturnValue({
       data: { pages: [[]] },
       isLoading: false,
       isFetching: false,
@@ -112,7 +112,7 @@ describe("ProductList", () => {
 
   it("should fetch next page of product list", async () => {
     const fetchNextPage = vi.fn();
-    (useGetProductList as vi.Mock).mockReturnValue({
+    (useGetProductList as Mock).mockReturnValue({
       data: {
         pages: [
           [
