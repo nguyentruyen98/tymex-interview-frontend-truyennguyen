@@ -4,7 +4,7 @@ import { FilterValue } from "@/types";
 import { buildUrlApiFormObject } from "@/utils";
 
 import { BASE_URL } from "./constant";
-import { IProduct } from "./type";
+import { IProduct } from "./apis.type";
 
 export const getProductList = async (
   filter: FilterValue,

@@ -1,7 +1,7 @@
 import { forwardRef, memo, useEffect, useMemo, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
-import { IProduct } from "@/apis/type";
+import { IProduct } from "@/apis/apis.type";
 import Button from "@/components/Button/Button";
 import ButtonGroup from "@/components/ButtonGroup/ButtonGroup";
 import CardItem from "@/components/CardItem/CardItem";

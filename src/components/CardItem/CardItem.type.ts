@@ -1,4 +1,4 @@
-import { IAuthor } from "@/apis/type";
+import { IAuthor } from "@/apis/apis.type";
 export type CardItemProps = {
   category?: string;
   avatar?: string;
