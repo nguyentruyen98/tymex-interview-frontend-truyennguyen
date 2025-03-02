@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { FilterValue } from "@/types";
 
-import { BASE_URL } from "../constant";
+import { BASE_URL } from "../apis.constant";
 import { getProductList } from "../getProductList";
 
 vi.mock("axios");

@@ -3,7 +3,7 @@ import axios, { AxiosResponse } from "axios";
 import { FilterValue } from "@/types";
 import { buildUrlApiFormObject } from "@/utils";
 
-import { BASE_URL } from "./constant";
+import { BASE_URL } from "./apis.constant";
 import { IProduct } from "./apis.type";
 
 export const getProductList = async (
