@@ -45,7 +45,8 @@ TymeX Assignment is a modern NFT marketplace built with React and TypeScript, fe
   - **Test coverage > 80%** ❌  
   - **Have working demo online**  ✅
 
-## 🛠️ **Tech Stack**
+## 🛠️ Tech Stack
+
 - **Frontend:** React, TypeScript 
 - **UI:** TailwindCSS, shadcn/ui, Framer Motion  
 - **Testing:** Vitest + React Testing Library  
@@ -117,7 +118,7 @@ npm run coverage
 - **Frontend:** [roy.lolstate.com](https://roy.lolstate.com/)
 - **Backend:** [roy.lolstate.com/api](https://roy.lolstate.com/api/)
 
- ## 📸 Screenshots (UI Demo)
+ ## 📸 Screenshots
 
 - **📱 iPhone 14**
 
@@ -127,7 +128,7 @@ npm run coverage
 
 ![Screen shot iPad Pro](./public/screen-shot-ipad.png)
 
-- **💻 Macbook**
+- **💻 MacBook**
 
 ![Screen shot iPad Pro](./public/screen-shot-macbook.png)
 
