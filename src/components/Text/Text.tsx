@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Slot } from "@radix-ui/react-slot";
 import { memo } from "react";
 
@@ -17,13 +18,15 @@ const Text = memo(
     asChild = false,
     tag = "p",
     style,
+    href,
   }: WithAnimationProps<TextProps>) => {
-    const Comp = asChild ? Slot : tag;
+    const Comp: any = asChild ? Slot : tag;
     return (
       <Comp
         className={cn(
           textVariants({ variant, color, cursor, style, className }),
         )}
+        href={href}
       >
         {children}
       </Comp>

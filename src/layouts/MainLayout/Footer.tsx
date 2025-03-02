@@ -11,35 +11,35 @@ const Footer = () => {
         <Text variant="title-xl">Navigation</Text>
         <div className="mt-8 grid grid-cols-3 grid-rows-1 gap-8">
           <div className="flex flex-col gap-3">
-            <Text cursor="pointer" variant="header-medium" isAnimations>
+            <Text tag="a" cursor="pointer" variant="header-medium" isAnimations>
               Home
             </Text>
-            <Text cursor="pointer" variant="header-medium" isAnimations>
+            <Text tag="a" cursor="pointer" variant="header-medium" isAnimations>
               About us
             </Text>
-            <Text cursor="pointer" variant="header-medium" isAnimations>
+            <Text tag="a" cursor="pointer" variant="header-medium" isAnimations>
               Our teams
             </Text>
           </div>
           <div className="flex flex-col gap-3">
-            <Text cursor="pointer" variant="header-medium" isAnimations>
+            <Text tag="a" cursor="pointer" variant="header-medium" isAnimations>
               Whitepaper
             </Text>
-            <Text cursor="pointer" variant="header-medium" isAnimations>
+            <Text tag="a" cursor="pointer" variant="header-medium" isAnimations>
               Marketplace
             </Text>
-            <Text cursor="pointer" variant="header-medium" isAnimations>
+            <Text tag="a" cursor="pointer" variant="header-medium" isAnimations>
               Roadmap
             </Text>
           </div>
           <div className="flex flex-col gap-3">
-            <Text cursor="pointer" variant="header-medium" isAnimations>
+            <Text tag="a" cursor="pointer" variant="header-medium" isAnimations>
               FAQs
             </Text>
-            <Text cursor="pointer" variant="header-medium" isAnimations>
+            <Text tag="a" cursor="pointer" variant="header-medium" isAnimations>
               News
             </Text>
-            <Text cursor="pointer" variant="header-medium" isAnimations>
+            <Text tag="a" cursor="pointer" variant="header-medium" isAnimations>
               Community
             </Text>
           </div>
@@ -51,13 +51,24 @@ const Footer = () => {
           <div className="mt-8 flex flex-col gap-8">
             <div className="flex gap-2">
               <PhoneIcon />
-              <Text cursor="pointer" variant="header-medium">
+              <Text
+                href="tel:01234568910"
+                tag="a"
+                cursor="pointer"
+                variant="header-medium"
+              >
                 01234568910
               </Text>
             </div>
             <div className="flex gap-2">
               <MessageIcon />
-              <Text className="index" cursor="pointer" variant="header-medium">
+              <Text
+                href="mailto:tymex-talent@tyme.com"
+                tag="a"
+                className="index"
+                cursor="pointer"
+                variant="header-medium"
+              >
                 tymex-talent@tyme.com
               </Text>
             </div>
@@ -73,17 +84,17 @@ const Footer = () => {
       </div>
       <div className="border-shadow-violet h-[0px] border-t lg:col-span-2 xl:col-span-3" />
       <div className="flex flex-col items-center gap-6 lg:col-span-2 lg:flex-row lg:justify-between xl:col-span-3">
-        <Text cursor="pointer" variant="header-medium">
+        <Text tag="a" cursor="pointer" variant="header-medium">
           ©2023 Tyme - Edit. All Rights reserved.
         </Text>
         <div className="flex gap-6">
-          <Text cursor="pointer" variant="header-medium" isAnimations>
+          <Text tag="a" cursor="pointer" variant="header-medium" isAnimations>
             Security
           </Text>
-          <Text cursor="pointer" variant="header-medium" isAnimations>
+          <Text tag="a" cursor="pointer" variant="header-medium" isAnimations>
             Legal
           </Text>
-          <Text cursor="pointer" variant="header-medium" isAnimations>
+          <Text tag="a" cursor="pointer" variant="header-medium" isAnimations>
             Privacy
           </Text>
         </div>

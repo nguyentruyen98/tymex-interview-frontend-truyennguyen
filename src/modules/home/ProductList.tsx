@@ -107,7 +107,7 @@ const Products = memo(
       if (isLoading || isFetching || isFetchingNextPage)
         return <ProductListSkeleton />;
       return (
-        <div className="flex max-h-[2625px] flex-wrap justify-center gap-10 overflow-x-hidden overflow-y-auto py-2 lg:justify-between">
+        <div className="flex max-h-[2101px] flex-wrap justify-center gap-10 overflow-x-hidden overflow-y-auto py-2 lg:justify-between">
           {(isLoading || isFetching) && <ProductListSkeleton />}
           {products.map(item => {
             const {
