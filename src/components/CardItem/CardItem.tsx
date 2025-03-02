@@ -61,7 +61,7 @@ const CardItem = memo(
                 )}
               >
                 <div className="flex flex-row items-center justify-between p-2 pb-0">
-                  <span className="rounded-sm bg-[#3A3841]/60 px-3 py-1 text-xs leading-5 font-medium text-white">
+                  <span className="bg-shadow-violet/60 rounded-sm px-3 py-1 text-xs leading-5 font-medium text-white">
                     {category}
                   </span>
                   {isFavorite && <Heart />}

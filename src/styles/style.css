@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "Drone Ranger Pro";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../assets/fonts/dronerangerpro_bold.otf");
+}
+
+@import "tailwindcss";
+@theme {
+  --font-drone: "Drone Ranger Pro", "sans-serif";
+  --breakpoint-xs: 28rem;
+  --breakpoint-lg: 64.1rem;
+  --color-primary-gradient: linear-gradient(to right, #da458f, #da34dd);
+  --color-shadow-gray: #89888b;
+  --color-shadow-violet: #3a3841;
+  --color-light-gray: #d6d6d6;
+  --color-secondary: #17161a;
+  --color-neon-violet: #dd5afe;
+  --color-blue-violet: #6366f1;
+  --color-orange-peach: #fe955a;
+  --color-golden-yellow: #f1da63;
+  --color-vibrant-green: #49dd81;
+  --color-cyan-aqua: #22b4c6;
+  --color-red-coral: #fe5a5a;
+  --color-pink-magenta: #f163d2;
+  --color-cyber-magenta: #da458f;
+  --color-neon-purple: #da34dd;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #777777;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffcc21;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #d4a800;
+}
+.ant-tooltip-inner {
+  background-image: linear-gradient(to right, #da458f, #da34dd) !important;
+  font-weight: 600;
+  font-size: 16px;
+}
+.ant-tooltip-arrow::before {
+  background-image: linear-gradient(to right, #da458f, #da34dd) !important;
+}
+:root {
+  position: relative;
+  min-height: 100vh;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: radial-gradient(at 60% 75%, #1a1a3a 0%, #000000 70%);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}

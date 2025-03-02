@@ -6,8 +6,8 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-linear-to-r from-[#DA458F] to-[#DA34DD]",
-        secondary: "bg-gradient-to-r from-[#DA458F]/40 to-[#DA34DD]/40",
+        primary: "bg-linear-to-r from-cyber-magenta to-neon-purple",
+        secondary: "bg-gradient-to-r from-cyber-magenta/40 to-neon-purple/40",
       },
       shadow: {
         default: "shadow-[0px_0px_50px_0_#BB4BFF52]",
