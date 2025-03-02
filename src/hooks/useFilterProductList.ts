@@ -18,15 +18,16 @@ export const useFilterProductList = () => {
   const [filter, setFilter] = useState<FilterValue>(DEFAULT_FILTER);
 
   const handleChangeFilter = useCallback(
-    (value: string, name: keyof FilterValue) => {
+    (value: string | number[], name: keyof FilterValue) => {
       if (name === "category") {
         return setFilterOnSearch(prevState => {
-          const { category } = prevState;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const { category } = prevState as unknown as any;
 
-          if (category.includes(value)) {
+          if (category.includes(value as string)) {
             return {
               ...prevState,
-              category: category.filter(item => item !== value),
+              category: category.filter((item: string) => item !== value),
             };
           } else {
             return {

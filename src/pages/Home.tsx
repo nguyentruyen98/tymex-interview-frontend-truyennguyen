@@ -1,4 +1,3 @@
-import { Vortex } from "@/components/vortex";
 import { withPageAnimation } from "@/hocs/withPageAnimation";
 import { useFilterProductList } from "@/hooks/useFilterProductList";
 import { useSearchProductList } from "@/hooks/useSearchProductList";

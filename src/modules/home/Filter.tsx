@@ -83,7 +83,9 @@ const Filter = memo(
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2" onClick={onResetFilter}>
               <CloseIcon />
-              <Text variant="header">Reset filter</Text>
+              <Text cursor="pointer" variant="header">
+                Reset filter
+              </Text>
             </div>
             <Button onClick={onFilter} className="px-10">
               Search
