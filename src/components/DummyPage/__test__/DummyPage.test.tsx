@@ -39,7 +39,7 @@ describe("DummyPage", () => {
 
   it("should navigate to home page on button click", async () => {
     renderComponent("Test");
-    userEvent.click(screen.getByText("Back to homepage"));
+    userEvent.click(screen.getByText("Back to Homepage"));
     await waitFor(() => expect(navigateMock).toHaveBeenCalledWith("/"));
   });
 });

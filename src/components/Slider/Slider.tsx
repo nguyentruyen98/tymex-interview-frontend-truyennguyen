@@ -17,7 +17,11 @@ const Slider = ({
 }: SliderProps) => {
   return (
     <div className={cn("flex flex-col gap-5", className)}>
-      {title && <Text variant="header">{title}</Text>}
+      {title && (
+        <Text tag="label" variant="header">
+          {title}
+        </Text>
+      )}
       <AntdSlider
         className="!m-0 !p-0"
         tooltip={{
