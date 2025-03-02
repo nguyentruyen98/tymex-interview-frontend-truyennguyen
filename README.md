@@ -1,50 +1,141 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">
+  <br>
+  <br>
+  TymeX Assignment - Truyen Nguyen
+  <br>
+</h1>
 
-Currently, two official plugins are available:
+## 📝 Project Overview
+TymeX Assignment is a modern NFT marketplace built with React and TypeScript, featuring a sleek UI, advanced filtering.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [🚀 Main Features](#-main-features)
+- [🛠️ Tech Stack](#-tech-stack)
+- [🔧 How To Use](#-how-to-use)
+- [📂 Project Structure](#-project-structure)
+- [🌍 Live Demo](#-live-demo)
+- [📸 Screenshots](#-screenshots)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🚀 Main Features
+### 🔥 **Must-Have Features**
+- **🌟 Modern UI/UX:**
+  - **Matches Figma Design accurately** ✅
+  - **Smooth hover effects & animations** ✅
+  - **Fully responsive** (Desktop, Tablet, Mobile) ✅
+- **⚡ NFT Marketplace Functionalities:** 
+  - **Search & Filter NFTs** by multiple criteria: ✅
+     - 🔍 **NFT Name** 
+     - 🎭 **Category (Upper Body, Lower Body, Hat, Shoes, Accessory, Legendary, Mythic, Epic, Rare)** ✅
+     - 💰 **Price Range (ETH)** ✅
+     - 🕒 **Time** ✅
+  - **"View More" Button** to load additional NFTs ✅
+  - **Loading effects & API error handling** ✅
+  - **Auto-refresh data every 60 seconds** ✅
+- **🔧 Code Quality & Best Practices:**  
+  - Written in **TypeScript** ✅
+  - **Component-based architecture**, breaking down UI elements efficiently ✅
+  - Code formatting with **ESLint + Prettier** ✅ 
+  - **Test coverage > 40%** ✅ 
+### 🌟 **Nice-To-Have Features (Optional)** 
+  - **Dynamic Animations**: Smooth hover & transition effects ✅
+  - **Lazy Loading & Skeleton UI** when fetching NFTs ✅
+  - **Have custom Hooks ( For Reactjs / Nextjs ) and Have Higher-Order Function (HOC)**  ✅
+  - **Debounce Search**: Reducing API calls while typing ✅
+  - **Test coverage > 80%** ❌  
+  - **Have working demo online**  ✅
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ **Tech Stack**
+- **Frontend:** React, TypeScript 
+- **UI:** TailwindCSS, shadcn/ui, Framer Motion  
+- **Testing:** Vitest + React Testing Library  
+- **API Handling:** Axios  
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+
+## 🔧 How To Use
+
+### 1️⃣ Install dependencies
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
+### 2️⃣ Run the development server
+```bash
+npm run dev
 ```
+The project will be available at `http://localhost:5173/`
+### 3️⃣ Run tests
+
+```bash
+npm run test
+```
+
+### 4️⃣ Run tests coverage
+
+```bash
+npm run coverage
+```
+ ## 📂 Project Structure
+
+ ```bash
+.
+├── public
+│   └── vite.svg
+├── src
+│   ├── __snapshots__
+│   ├── apis
+│   ├── assets
+│   ├── components
+│   ├── constants
+│   ├── hocs
+│   ├── hooks
+│   ├── layouts
+│   ├── lib
+│   ├── modules
+│   ├── pages
+│   ├── routes
+│   ├── styles
+│   ├── types
+│   ├── utils
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── vite-env.d.ts
+├── README.md
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── setup.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── vite.config.ts
+└── vitest.config.ts
+ ```
+
+ ## 🌍 Live Demo
+- **Frontend:** [roy.lolstate.com](https://roy.lolstate.com/)
+- **Backend:** [roy.lolstate.com/api](https://roy.lolstate.com/api/)
+
+ ## 📸 Screenshots (UI Demo)
+
+- **📱 iPhone 14**
+
+![Screen shot iPhone 14](./public/screen-shot-ip14.png)
+
+- **iPad Pro**
+
+![Screen shot iPad Pro](./public/screen-shot-ipad.png)
+
+- **💻 Macbook**
+
+![Screen shot iPad Pro](./public/screen-shot-macbook.png)
+
+
+## 🆕 Upcoming Features
+- **Dark Mode Toggle** 🌙
+- **Multi-language Support** 🌍
+- **User Profiles & Wallet Integration** 👤💰
+- **Improved Test Coverage (80%+)** 🧪
+ 
+
