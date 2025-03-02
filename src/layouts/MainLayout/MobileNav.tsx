@@ -7,8 +7,6 @@ import {
   SheetClose,
   SheetContent,
   SheetFooter,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { HEADER_MENU } from "@/constants";
@@ -26,7 +24,7 @@ const MobileNav = () => {
       >
         <nav className="flex basis-full flex-col gap-4 font-medium">
           {HEADER_MENU.map(({ label, path }) => (
-            <SheetClose asChild>
+            <SheetClose asChild key={path}>
               <Link to={path} key={path}>
                 <Text
                   variant="title-lg"

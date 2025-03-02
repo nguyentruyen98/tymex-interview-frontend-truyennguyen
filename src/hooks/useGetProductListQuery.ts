@@ -28,5 +28,6 @@ export const useGetProductList = (filter: FilterValue, searchValue: string) => {
       }
       return lastPageParam + 1;
     },
+    throwOnError: true,
   });
 };
