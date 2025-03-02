@@ -20,7 +20,7 @@ const DummyPage = memo(({ title }: DummyPageProps) => {
         This page is in progress, please come back later
       </Text>
       <Button className="mt-10" onClick={() => navigate(APP_ROUTES.HOME)}>
-        Back to homepage
+        Back to Homepage
       </Button>
     </div>
   );
