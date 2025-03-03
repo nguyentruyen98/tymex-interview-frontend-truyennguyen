@@ -1,10 +1,13 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 
 import { getProductList } from "@/apis/getProductList";
 import { FilterValue } from "@/types";
 
+const FETCH_INTERVAL = 60 * 1000;
+
 export const useGetProductList = (filter: FilterValue, searchValue: string) => {
-  return useInfiniteQuery({
+  const query = useInfiniteQuery({
     queryKey: [
       "productList",
       searchValue,
@@ -30,4 +33,15 @@ export const useGetProductList = (filter: FilterValue, searchValue: string) => {
     },
     throwOnError: true,
   });
+
+  const { refetch } = query;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      refetch();
+    }, FETCH_INTERVAL);
+
+    return () => clearInterval(interval);
+  }, [refetch]);
+
+  return query;
 };
