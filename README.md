@@ -43,6 +43,11 @@ TymeX Assignment is a modern NFT marketplace built with React and TypeScript, fe
   - **Have custom Hooks ( For Reactjs / Nextjs ) and Have Higher-Order Function (HOC)**  ✅
   - **Debounce Search**: Reducing API calls while typing ✅
   - **Test coverage > 80%** ❌  
+    - *Statement Coverage:* 93.08%
+    - *Branch Coverage:* 88.46%
+    - *Function Coverage:* 75.36%
+    - *Line Coverage:* 93.08%
+
   - **Have working demo online**  ✅
 
 ## 🛠️ Tech Stack
